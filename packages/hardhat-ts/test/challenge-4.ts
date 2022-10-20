@@ -116,7 +116,7 @@ describe("🚩 Challenge 4: ⚖️ 🪙 DEX", () => {
               txReceipt.logs.find((log: any) => log.address == dexContract.address)
             );
             const args = logDescr.args;
-            return args[2]; // index of ethAmount in event
+            return args[1]; // index of ethAmount in event
           }
           const ethSent_1 = getEthAmount(tx1_receipt);
           const ethSent_2 = getEthAmount(tx2_receipt);
