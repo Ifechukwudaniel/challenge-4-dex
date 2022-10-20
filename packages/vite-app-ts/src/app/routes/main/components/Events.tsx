@@ -46,14 +46,9 @@ export const Events: FC<IEventsProps> = (props) => {
           }
           return (
             <List.Item key={item.blockNumber + "_" + item.args[0].toString()}>
-              <Address address={item.args[0]} ensProvider={props.mainnetProvider} fontSize={16} />
-              {item.args[1].toString().indexOf("E") == -1 ? (
-                <Balance address={undefined} balance={item.args[1]} />
-              ) : (
-                `${item.args[1].toString()}`
-              )}
-              <Balance address={undefined} balance={item.args[2]} />
-              <Balance address={undefined} balance={item.args[3]} />
+              <Balance address={undefined} balance={item.args[0]} />
+              <Balance address={undefined} balance={item.args[1]} />
+              <Address address={item.args[2]} ensProvider={props.mainnetProvider} fontSize={16} />
             </List.Item>
           );
         }}
