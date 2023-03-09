@@ -193,7 +193,7 @@ export const DEX: FC<IDEXProps> = (props) => {
           <GenericContract
             contractName="Balloons"
             contract={contractList?.['Balloons']}
-            show={["balanceOf", "approve"]}
+            show={["balanceOf", "approve","faucet"]}
             mainnetProvider={props.scaffoldAppProviders.mainnetProvider}
             blockExplorer={props.scaffoldAppProviders.targetNetwork.blockExplorer}
             contractConfig={props.appContractConfig}
