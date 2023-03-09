@@ -39,8 +39,7 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironmentExtended) => {
     await balloons.approve(dex.address, ethers.utils.parseEther("0.01"));
     console.log("INIT exchange...");
     await dex.init(ethers.utils.parseEther("50"), {
-      value: ethers.utils.parseEther("0.01"),
-      gasLimit: 200000,
+      value: ethers.utils.parseEther("0.001")
     });
 
 };
