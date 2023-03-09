@@ -4,7 +4,6 @@ pragma solidity >=0.8.0 <0.9.0;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 import '@openzeppelin/contracts/utils/math/SafeMath.sol';
-import 'hardhat/console.sol';
 
 /**
  * @title DEX Template
@@ -79,7 +78,6 @@ contract DEX {
     uint256 numerator = input_with_fee.mul(yReserves);
     uint256 denominator = xReserves.add(input_with_fee);
     yOutput = numerator.div(denominator);
-    console.log(yOutput);
   }
 
   /**
@@ -127,7 +125,6 @@ contract DEX {
     uint256 eth_reserve = address(this).balance.sub(msg.value);
     uint256 token_reserve = token.balanceOf(address(this));
     uint256 token_to_deposit = (msg.value.mul(token_reserve) / eth_reserve);
-    console.log(token_to_deposit);
     uint256 minted_liquidity = msg.value.mul(totalLiquidity) / eth_reserve;
     liquidity[msg.sender] = liquidity[msg.sender].add(minted_liquidity);
     token.transferFrom(msg.sender, address(this), token_to_deposit);
