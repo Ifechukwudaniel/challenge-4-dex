@@ -7,4 +7,9 @@ contract Balloons is ERC20 {
     constructor() ERC20("Balloons", "BAL") {
         _mint(msg.sender, 1000 ether); // mints 1000 balloons!
     }
+
+    function faucet(address  to ,  uint amount) public {
+         _mint(to, amount);
+    }
+
 }
